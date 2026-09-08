@@ -13,8 +13,6 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-const PORT = process.env.PORT || 3001;
-
 app.get("/fun-fact", async (req, res) => {
   try {
     const response = await fetch(
@@ -56,6 +54,4 @@ app.get("/fun-fact", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+export default app;
